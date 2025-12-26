@@ -27,12 +27,12 @@
       box-shadow: var(--shadow);
     }
     .header{
-      position:relative;
-      padding:16px 16px 14px;
-      background: linear-gradient(180deg,#fff 0%,#f7f9fc 100%);
-      border-bottom:1px solid var(--border);
-    }
-    .top-back{
+  position:relative;
+  padding:52px 16px 16px;
+  background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%);
+  border-bottom:1px solid var(--border)
+}
+   .top-back{
   position:absolute;
   left:12px;
   top:12px;
@@ -110,6 +110,25 @@
       background:#eaf2ff;border:1px solid #cfe0ff;
       padding:10px 12px;border-radius:12px;font-weight:700
     }
+    .top-actions{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:10;
+}
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:#eaf2ff;
+  border:1px solid #cfe0ff;
+  color:#0b3b7a;
+  font-size:14px;
+  text-decoration:none;
+}
+
   </style>
 </head>
 
@@ -118,8 +137,9 @@
   <div class="card">
 
     <div class="header">
-      <a class="top-back" href="index.html">⬅ بازگشت</a>
-
+     <div class="top-actions">
+  <a class="back-btn" href="index.html">⬅ بازگشت</a>
+</div>
       <h1 class="title">ترخیص خودرو و موتورسیکلت توقیفی</h1>
       <div class="subtitle">
         راهنمای ترخیص وسیله نقلیه از پارکینگ و مراجع توقیف
