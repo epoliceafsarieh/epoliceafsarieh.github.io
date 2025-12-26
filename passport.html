@@ -6,224 +6,109 @@
   <title>مدارک گذرنامه بین‌المللی | پلیس +۱۰ افسریه</title>
   <style>
     :root{
-      --bg:#f5f6f8;
-      --card:#ffffff;
-      --text:#111;
-      --muted:#555;
-      --border:#e6e8ee;
-      --accent:#0b3b7a;
-      --soft:#f2f5f9;
-      --warn:#fff6e5;
-      --warn-border:#ffd89a;
+      --bg:#f5f6f8; --card:#fff; --text:#111; --muted:#555;
+      --border:#e6e8ee; --accent:#0b3b7a; --soft:#f2f5f9;
+      --warn:#fff6e5; --warn-border:#ffd89a;
     }
-    body{
-      font-family: Tahoma, Arial, sans-serif;
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.9;
-    }
-    .wrap{
-      max-width: 820px;
-      margin: 18px auto 28px;
-      padding: 0 14px;
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:12px;
-      overflow:hidden;
-    }
-    .header{
-      padding:16px 16px 14px;
-      background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
-      border-bottom:1px solid var(--border);
-    }
-    .title{
-      margin:0;
-      font-size:20px;
-      color:var(--accent);
-    }
-    .subtitle{
-      margin:6px 0 0;
-      font-size:14px;
-      color:var(--muted);
-    }
+    body{font-family:Tahoma,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9}
+    .wrap{max-width:820px;margin:18px auto 28px;padding:0 14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .header{padding:16px;background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%);border-bottom:1px solid var(--border)}
+    .title{margin:0;font-size:20px;color:var(--accent)}
+    .subtitle{margin:6px 0 12px;font-size:14px;color:var(--muted)}
+    .meta{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{background:var(--soft);border:1px solid var(--border);border-radius:999px;padding:7px 10px;font-size:13px}
+    .content{padding:14px 16px 18px}
+    h2{margin:18px 0 8px;font-size:16px}
+    ul{margin:0;padding-right:18px;font-size:14px}
 
-    .content{ padding: 14px 16px 18px; }
+    details{margin-top:10px}
+    summary{cursor:pointer;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    .fee-box{margin-top:8px;border:1px solid var(--border);border-radius:10px;padding:10px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{border:1px solid var(--border);padding:8px;text-align:center}
+    th{background:#f2f5f9}
 
-    .meta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin: 12px 0 4px;
-    }
-    .pill{
-      background:var(--soft);
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:7px 10px;
-      font-size:13px;
-      color:#222;
-      white-space:nowrap;
-    }
-
-    h2{
-      margin:18px 0 8px;
-      font-size:16px;
-      color:#1a1a1a;
-    }
-    ul{
-      margin:0;
-      padding-right:18px;
-      font-size:14px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-      margin-top: 14px;
-    }
-    @media (min-width: 680px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
-    .box{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:10px;
-      padding:12px 12px;
-    }
-    .box h3{
-      margin:0 0 6px;
-      font-size:14px;
-      color:#222;
-    }
-    .box p, .box li{
-      font-size:13px;
-      color:#333;
-    }
-    .box ul{ margin:0; padding-right:18px; }
-
-    .notice{
-      margin-top:16px;
-      background:var(--warn);
-      border:1px solid var(--warn-border);
-      border-radius:10px;
-      padding:12px 12px;
-      font-size:13px;
-      color:#333;
-    }
-
-    .footer{
-      margin-top: 14px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    a{
-      text-decoration:none;
-      color:#0a58ca;
-      font-size:14px;
-    }
-    .btn{
-      background:#eaf2ff;
-      border:1px solid #cfe0ff;
-      padding:10px 12px;
-      border-radius:10px;
-      display:inline-block;
-    }
+    .notice{margin-top:16px;background:var(--warn);border:1px solid var(--warn-border);
+      border-radius:10px;padding:12px;font-size:13px}
+    .footer{margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    a{color:#0a58ca;text-decoration:none;font-size:14px}
+    .btn{background:#eaf2ff;border:1px solid #cfe0ff;padding:10px 12px;border-radius:10px}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="header">
-        <h1 class="title">مدارک مورد نیاز گذرنامه بین‌المللی</h1>
-        <div class="subtitle">این راهنما مربوط به گذرنامه <strong>بین‌المللی</strong> است (نه گذرنامه زیارتی).</div>
+<div class="wrap">
+  <div class="card">
+    <div class="header">
+      <h1 class="title">مدارک مورد نیاز گذرنامه بین‌المللی</h1>
+      <div class="subtitle">این راهنما مربوط به گذرنامه <strong>بین‌المللی</strong> است (نه گذرنامه زیارتی).</div>
 
-        <div class="meta">
-          <div class="pill">⏱ زمان معمول: ۷ تا ۱۴ روز کاری</div>
-          <div class="pill">💳 هزینه: مطابق تعرفه رسمی</div>
-          <div class="pill">📷 عکس: در دفتر (بیومتریک)</div>
-        </div>
+      <div class="meta">
+        <div class="pill">⏱ زمان معمول: ۷ تا ۱۴ روز کاری</div>
+
+        <details class="pill">
+          <summary>💳 هزینه: مطابق تعرفه رسمی (مشاهده جزئیات)</summary>
+          <div class="fee-box">
+            <table>
+              <tr><th>عنوان</th><th>توضیح</th></tr>
+              <tr><td>هزینه صدور</td><td>طبق تعرفه رسمی پلیس +۱۰</td></tr>
+              <tr><td>سایر هزینه‌ها</td><td>در زمان ثبت درخواست اعلام می‌شود</td></tr>
+            </table>
+          </div>
+        </details>
+
+        <div class="pill">📷 عکس: در دفتر (بیومتریک)</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>📄 مدارک هویتی</h2>
+      <ul>
+        <li>شناسنامه عکس‌دار و کارت ملی (بالای ۱۵ سال)</li>
+        <li>تکمیل فرم درخواست گذرنامه</li>
+      </ul>
+
+      <h2>👶 افراد زیر ۱۸ سال</h2>
+      <ul>
+        <li>رضایت‌نامه محضری ولی قانونی</li>
+        <li>بالای ۱۵ سال: شناسنامه عکس‌دار و کارت ملی</li>
+        <li>زیر ۱۵ سال: گواهی تحصیلی یا دفترچه بیمه عکس‌دار</li>
+        <li>زیر ۵ سال: عکس ۴×۶ رنگی زمینه سفید</li>
+      </ul>
+
+      <h2>👩 مدارک بانوان</h2>
+      <ul>
+        <li>متأهل: رضایت‌نامه محضری همسر</li>
+        <li>مطلقه: اصل طلاق‌نامه</li>
+        <li>فوت همسر: اصل گواهی فوت</li>
+      </ul>
+
+      <h2>🪖 مدارک نظام وظیفه</h2>
+      <ul>
+        <li>کارت پایان خدمت یا معافیت دائم</li>
+        <li>مشمولان غایب: استعلام در دفتر</li>
+      </ul>
+
+      <h2>🗂 سایر مدارک</h2>
+      <ul>
+        <li>گذرنامه قبلی (در صورت وجود)</li>
+      </ul>
+
+      <div class="notice">
+        <strong>⚠️ نکات مهم:</strong>
+        <div>• حضور متقاضی الزامی است</div>
+        <div>• عکس در دفتر گرفته می‌شود</div>
+        <div>• مدارک ناقص پذیرفته نمی‌شود</div>
       </div>
 
-      <div class="content">
-
-        <h2>📄 مدارک هویتی</h2>
-        <ul>
-          <li>شناسنامه عکس‌دار و کارت ملی (افراد بالای ۱۵ سال)</li>
-          <li>تکمیل فرم درخواست گذرنامه</li>
-        </ul>
-
-        <h2>👶 افراد زیر ۱۸ سال</h2>
-        <ul>
-          <li>رضایت‌نامه محضری ولی قانونی</li>
-          <li>بالای ۱۵ سال: شناسنامه عکس‌دار و کارت ملی</li>
-          <li>زیر ۱۵ سال: گواهی تحصیلی یا دفترچه بیمه عکس‌دار</li>
-          <li>زیر ۵ سال: یک قطعه عکس ۴×۶ رنگی با زمینه سفید</li>
-        </ul>
-
-        <h2>👩 مدارک بانوان</h2>
-        <ul>
-          <li>بانوان متأهل: رضایت‌نامه محضری همسر</li>
-          <li>بانوان مطلقه: اصل طلاق‌نامه</li>
-          <li>بانوان با همسر فوت‌شده: اصل گواهی فوت</li>
-        </ul>
-
-        <h2>🪖 مدارک نظام وظیفه</h2>
-        <ul>
-          <li>اصل کارت هوشمند پایان خدمت یا معافیت دائم</li>
-          <li>مشمولان غایب: استعلام در دفتر انجام می‌شود</li>
-        </ul>
-
-        <h2>🗂 سایر مدارک</h2>
-        <ul>
-          <li>گذرنامه قبلی (در صورت وجود)</li>
-          <li>نظامیان شاغل و بازنشسته زیر ۵ سال: نامه حفاظت و تأیید اداره گذرنامه</li>
-          <li>نظامیان بازنشسته بیش از ۵ سال: کارت بازنشستگی</li>
-        </ul>
-
-        <div class="grid">
-          <div class="box">
-            <h3>⏱ زمان آماده شدن</h3>
-            <ul>
-              <li>زمان معمول تحویل بین ۷ تا ۱۴ روز کاری است.</li>
-            </ul>
-          </div>
-          <div class="box">
-            <h3>💳 هزینه‌ها</h3>
-            <ul>
-              <li>هزینه‌ها مطابق تعرفه رسمی دریافت می‌شود.</li>
-              <li>مبلغ دقیق در زمان ثبت درخواست اعلام می‌گردد.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="notice">
-          <strong>⚠️ نکات مهم:</strong>
-          <div>• حضور متقاضی الزامی است.</div>
-          <div>• عکس به‌صورت بیومتریک در دفتر گرفته می‌شود.</div>
-          <div>• در صورت نقص مدارک، درخواست ثبت نخواهد شد.</div>
-        </div>
-
-        <h2>❓ پرسش‌های پرتکرار</h2>
-        <ul>
-          <li><strong>آیا نیاز به آوردن عکس کاغذی است؟</strong> خیر، به‌جز موارد خاص (زیر ۵ سال).</li>
-          <li><strong>اگر گذرنامه قبلی داشته باشم چه می‌شود؟</strong> ارائه آن الزامی است.</li>
-          <li><strong>برای افراد زیر ۱۸ سال چه مدرکی مهم است؟</strong> رضایت‌نامه محضری ولی قانونی.</li>
-        </ul>
-
-        <div class="footer">
-          <a class="btn" href="index.html">⬅ بازگشت به صفحه اصلی</a>
-          <span style="font-size:12px;color:#777;">این راهنما به مرور کامل‌تر می‌شود.</span>
-        </div>
+      <div class="footer">
+        <a class="btn" href="index.html">⬅ بازگشت به صفحه اصلی</a>
+        <span style="font-size:12px;color:#777">این راهنما به مرور کامل‌تر می‌شود</span>
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>
