@@ -34,11 +34,12 @@
 
   // ردیف‌های جدول هزینه (برای گذرنامه: issue/photo/office)
   // برای خدمات دیگر هم اگر همین کلیدها را بدهی، بدون تغییر کار می‌کند.
-  const feeRows = [
-    { title: "صدور خدمت", value: feeObj ? feeObj.issue : "—" },
-    { title: "عکس/بیومتریک", value: feeObj ? feeObj.photo : "—" },
-    { title: "خدمات دفتر", value: feeObj ? feeObj.office : "—" }
-  ];
+ const feeRows = (svc.feeRows || []).map(r => ({
+  title: r.label,
+  value: feeObj ? feeObj[r.field] : "—"
+}));
+
+
 
   const style = `
   <style>
@@ -81,7 +82,8 @@
 
   const feeTable = `
     <details class="pill">
-      <summary>💳 هزینه: مطابق تعرفه رسمی (مشاهده جزئیات)</summary>
+      <summary>💳 هزینه: ${esc(svc?.meta?.feeSummary || "مطابق تعرفه رسمی")} (مشاهده جزئیات)</summary>
+
       <div class="fee-box">
         <table>
           <tr><th>عنوان</th><th>مبلغ/توضیح</th></tr>
