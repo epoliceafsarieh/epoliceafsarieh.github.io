@@ -53,8 +53,9 @@
           <div class="fee-box">
             <table>
               <tr><th>عنوان</th><th>توضیح</th></tr>
-              <tr><td>هزینه صدور</td><td>طبق تعرفه رسمی پلیس +۱۰</td></tr>
-              <tr><td>سایر هزینه‌ها</td><td>در زمان ثبت درخواست اعلام می‌شود</td></tr>
+             <tr><td>هزینه صدور</td><td id="fee-passport-issue">...</td></tr>
+<tr><td>سایر هزینه‌ها</td><td id="fee-passport-other">...</td></tr>
+
             </table>
           </div>
         </details>
@@ -110,5 +111,12 @@
     </div>
   </div>
 </div>
+  <script src="fees.js"></script>
+<script>
+  // نمایش هزینه‌های گذرنامه از فایل مرکزی
+  document.getElementById("fee-passport-issue").textContent = FEES.passport.issue;
+  document.getElementById("fee-passport-other").textContent = FEES.passport.other;
+</script>
+
 </body>
 </html>
