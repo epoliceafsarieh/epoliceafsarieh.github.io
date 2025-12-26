@@ -1,35 +1,181 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>راهنمای خدمات پلیس +۱۰ افسریه</title>
+
   <style>
-    body { font-family: Tahoma, Arial, sans-serif; margin: 0; background: #f6f7f9; }
-    .box { max-width: 650px; margin: 24px auto; background: #fff; padding: 18px 16px; border-radius: 10px; }
-    h1 { margin: 0 0 8px; font-size: 20px; }
-    p { margin: 0 0 14px; color: #444; font-size: 14px; line-height: 1.9; }
-    ul { margin: 0; padding: 0; list-style: none; }
-    li { margin: 10px 0; }
-    a { display: block; padding: 12px; background: #eef2f6; border-radius: 8px; text-decoration: none; color: #111; }
-    a:hover { background: #e3e9f0; }
-    .note { margin-top: 14px; font-size: 12px; color: #666; }
+    :root{
+      --bg:#f5f6f8; --card:#fff; --text:#111; --muted:#555;
+      --border:#e6e8ee; --accent:#0b3b7a; --soft:#f2f5f9;
+      --warn:#fff6e5; --warn-border:#ffd89a;
+    }
+    body{font-family:Tahoma,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9}
+    .wrap{max-width:920px;margin:18px auto 28px;padding:0 14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+    .header{padding:18px 16px;background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%);border-bottom:1px solid var(--border)}
+    .title{margin:0;font-size:20px;color:var(--accent)}
+    .subtitle{margin:6px 0 0;font-size:14px;color:var(--muted)}
+
+    .content{padding:14px 16px 18px}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+    @media (min-width:720px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+
+    .item{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:10px;
+      padding:12px 12px;
+      background:var(--soft);
+      border:1px solid var(--border);
+      border-radius:12px;
+      text-decoration:none;
+      color:var(--text);
+      transition:transform .06s ease;
+    }
+    .item:active{transform:scale(.99)}
+    .item .right{
+      display:flex;align-items:center;gap:10px;min-width:0;
+    }
+    .badge{
+      width:34px;height:34px;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;
+      background:#fff;border:1px solid var(--border);
+      flex:0 0 auto;
+      font-size:18px;
+    }
+    .texts{min-width:0}
+    .name{margin:0;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hint{margin:2px 0 0;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .arrow{font-size:16px;color:#666;flex:0 0 auto}
+
+    h2{margin:18px 0 10px;font-size:15px}
+    .note{
+      margin-top:14px;
+      background:var(--warn);
+      border:1px solid var(--warn-border);
+      border-radius:12px;
+      padding:12px;
+      font-size:13px;
+      color:#333;
+    }
+
+    details{margin-top:14px}
+    summary{cursor:pointer;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    .test-box{
+      margin-top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:10px;
+    }
+    .test-box a{
+      display:block;
+      padding:10px 10px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:var(--soft);
+      margin:8px 0;
+      text-decoration:none;
+      color:var(--text);
+      font-size:13px;
+    }
+    .footer{
+      margin-top:14px;
+      display:flex;justify-content:space-between;align-items:center;
+      gap:10px;flex-wrap:wrap
+    }
+    .muted{font-size:12px;color:#777}
   </style>
 </head>
+
 <body>
-  <div class="box">
-    <h1>راهنمای خدمات پلیس +۱۰ افسریه</h1>
-    <p>برای دیدن مدارک و توضیحات هر خدمت، روی گزینه مورد نظر بزنید.</p>
+  <div class="wrap">
+    <div class="card">
+      <div class="header">
+        <h1 class="title">راهنمای خدمات پلیس +۱۰ افسریه</h1>
+        <p class="subtitle">برای مشاهده مدارک و توضیحات هر خدمت، روی گزینه مورد نظر بزنید.</p>
+      </div>
 
-    <ul>
-  <li><a href="khalafi.html">خلافی خودرو</a></li>
-  <li><a href="passport.html">گذرنامه</a></li>
-      <li><a href="tarkhis-vehicle.html">ترخیص خودرو و موتورسیکلت</a></li>
-      <li><a href="passport-test.html">[تست] گذرنامه (نسخه جدید)</a></li>
-<li><a href="tarkhis-test2.html">[تست] ترخیص (نسخه جدید)</a></li>
+      <div class="content">
 
-</ul>
-    <p class="note">این راهنما به مرور کامل‌تر می‌شود.</p>
+        <h2>خدمات پرمراجعه</h2>
+        <div class="grid">
+          <a class="item" href="passport.html">
+            <div class="right">
+              <div class="badge">🛂</div>
+              <div class="texts">
+                <p class="name">گذرنامه بین‌المللی</p>
+                <p class="hint">مدارک + زمان + هزینه (طبق تعرفه)</p>
+              </div>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="item" href="khalafi.html">
+            <div class="right">
+              <div class="badge">🚗</div>
+              <div class="texts">
+                <p class="name">خلافی خودرو</p>
+                <p class="hint">استعلام/پرداخت، چاپ رسید</p>
+              </div>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <a class="item" href="tarkhis-vehicle.html">
+            <div class="right">
+              <div class="badge">🅿️</div>
+              <div class="texts">
+                <p class="name">ترخیص خودرو و موتورسیکلت توقیفی</p>
+                <p class="hint">مدارک برگه پارکینگ + مراحل</p>
+              </div>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+
+          <!-- نمونه برای خدمات چندشاخه -->
+          <a class="item" href="nezam-vazifeh.html">
+            <div class="right">
+              <div class="badge">🪖</div>
+              <div class="texts">
+                <p class="name">نظام وظیفه (چند خدمت)</p>
+                <p class="hint">ورود به لیست زیرخدمت‌ها</p>
+              </div>
+            </div>
+            <div class="arrow">‹</div>
+          </a>
+        </div>
+
+        <div class="note">
+          <strong>نکته:</strong>
+          اطلاعات این راهنما به مرور کامل‌تر می‌شود. در صورت نقص مدارک، پذیرش انجام نمی‌شود.
+        </div>
+
+        <!-- تست‌ها را جدا و جمع‌شونده نگه می‌داریم -->
+        <details>
+          <summary>نمایش لینک‌های تست (برای مدیریت سایت)</summary>
+          <div class="test-box">
+            <a href="passport-test.html">گذرنامه (نسخه تست)</a>
+            <a href="tarkhis-test2.html">ترخیص (نسخه تست ۲)</a>
+          </div>
+        </details>
+
+        <div class="footer">
+          <span class="muted">نسخه داخلی/در حال توسعه</span>
+          <span class="muted">epoliceafsarieh.github.io</span>
+        </div>
+
+      </div>
+    </div>
   </div>
 </body>
 </html>
