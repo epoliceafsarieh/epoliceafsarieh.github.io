@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>تست ترخیص ۲ | پلیس +۱۰ افسریه</title>
 </head>
-<body style="font-family:Tahoma,Arial,sans-serif; line-height:1.9; padding:20px;">
-  <h1>تست ترخیص ۲</h1>
-  <p>اگر این صفحه باز شود یعنی GitHub Pages فایل را درست منتشر کرده است.</p>
-
-  <div id="app" style="margin-top:16px; padding:12px; border:1px solid #ddd; border-radius:10px;">
-    در حال لود...
+<body>
+  <div id="app" style="font-family:tahoma; padding:16px; direction:rtl">
+    در حال بارگذاری...
   </div>
 
   <script>
-    document.getElementById('app').textContent =
-      'OK ✅ ' + new Date().toLocaleString('fa-IR');
+    window.SERVICE_KEY = "tarkhis";
+    function fail(name){
+      document.getElementById("app").innerHTML =
+        "خطا: فایل <b>" + name + "</b> لود نشد (یا مسیرش اشتباه است).";
+    }
   </script>
+
+  <script src="services.js" onerror="fail('services.js')"></script>
+  <script src="fees.js" onerror="fail('fees.js')"></script>
+  <script src="render.js" onerror="fail('render.js')"></script>
 </body>
 </html>
