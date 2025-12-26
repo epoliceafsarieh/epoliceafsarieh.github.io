@@ -20,41 +20,101 @@
 
     .content{padding:14px 16px 18px}
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-    }
-    @media (min-width:720px){
-      .grid{grid-template-columns:1fr 1fr}
-    }
+   .grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+@media (min-width:720px){
+  .grid{grid-template-columns:1fr 1fr}
+}
 
-    .item{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:10px;
-      padding:12px 12px;
-      background:var(--soft);
-      border:1px solid var(--border);
-      border-radius:12px;
-      text-decoration:none;
-      color:var(--text);
-      transition:transform .06s ease;
-    }
-    .item:active{transform:scale(.99)}
-    .item .right{
-      display:flex;align-items:center;gap:10px;min-width:0;
-    }
-    .badge{
-      width:34px;height:34px;border-radius:10px;
-      display:flex;align-items:center;justify-content:center;
-      background:#fff;border:1px solid var(--border);
-      flex:0 0 auto;
-      font-size:18px;
-    }
-    .texts{min-width:0}
-    .name{margin:0;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .hint{margin:2px 0 0;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .arrow{font-size:16px;color:#666;flex:0 0 auto}
+.item{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+
+  padding:14px 14px;
+  background:linear-gradient(180deg,#ffffff 0%, #f8fafc 100%);
+  border:1px solid var(--border);
+  border-radius:14px;
+
+  text-decoration:none;
+  color:var(--text);
+
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  transition:transform .08s ease, box-shadow .08s ease, border-color .08s ease;
+}
+.item:active{
+  transform:scale(.99);
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.item:hover{
+  border-color:#d7deea;
+  box-shadow:0 10px 22px rgba(0,0,0,.08);
+}
+
+.item .right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.badge{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#fff;
+  border:1px solid #dde3ee;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+  flex:0 0 auto;
+  font-size:20px;
+}
+
+.texts{min-width:0}
+
+.name{
+  margin:0;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:-0.2px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.hint{
+  margin:3px 0 0;
+  font-size:12px;
+  color:var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.arrow{
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--soft);
+  border:1px solid var(--border);
+  color:#555;
+  flex:0 0 auto;
+  font-size:18px;
+}
+
 
     h2{margin:18px 0 10px;font-size:15px}
     .note{
@@ -117,7 +177,8 @@
                 <p class="hint">مدارک + زمان + هزینه (طبق تعرفه)</p>
               </div>
             </div>
-            <div class="arrow">‹</div>
+            <div class="arrow">❮</div>
+
           </a>
 
           <a class="item" href="khalafi.html">
@@ -128,7 +189,8 @@
                 <p class="hint">استعلام/پرداخت، چاپ رسید</p>
               </div>
             </div>
-            <div class="arrow">‹</div>
+           <div class="arrow">❮</div>
+
           </a>
 
           <a class="item" href="tarkhis-vehicle.html">
@@ -139,7 +201,8 @@
                 <p class="hint">مدارک برگه پارکینگ + مراحل</p>
               </div>
             </div>
-            <div class="arrow">‹</div>
+            <div class="arrow">❮</div>
+
           </a>
 
           <!-- نمونه برای خدمات چندشاخه -->
@@ -151,7 +214,8 @@
                 <p class="hint">ورود به لیست زیرخدمت‌ها</p>
               </div>
             </div>
-            <div class="arrow">‹</div>
+           <div class="arrow">❮</div>
+
           </a>
         </div>
 
