@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ترخیص خودرو و موتورسیکلت | پلیس +۱۰ افسریه</title>
+
+  <style>
+    :root{
+      --bg:#f5f6f8; --card:#fff; --text:#111; --muted:#555;
+      --border:#e6e8ee; --accent:#0b3b7a; --soft:#f2f5f9;
+      --warn:#fff6e5; --warn-border:#ffd89a;
+    }
+    body{
+      font-family:Tahoma,Arial,sans-serif;
+      margin:0;background:var(--bg);color:var(--text);line-height:1.9
+    }
+    .wrap{max-width:820px;margin:18px auto 28px;padding:0 14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .header{padding:16px;background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%);border-bottom:1px solid var(--border)}
+    .title{margin:0;font-size:20px;color:var(--accent)}
+    .subtitle{margin:6px 0 12px;font-size:14px;color:var(--muted)}
+    .meta{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{background:var(--soft);border:1px solid var(--border);border-radius:999px;padding:7px 10px;font-size:13px}
+    .content{padding:14px 16px 18px}
+    h2{margin:18px 0 8px;font-size:16px}
+    ul{margin:0;padding-right:18px;font-size:14px}
+
+    .steps li{margin-bottom:6px}
+
+    .notice{
+      margin-top:16px;background:var(--warn);
+      border:1px solid var(--warn-border);
+      border-radius:10px;padding:12px;font-size:13px
+    }
+
+    .footer{
+      margin-top:14px;
+      display:flex;justify-content:space-between;align-items:center;
+      gap:10px;flex-wrap:wrap
+    }
+    a{color:#0a58ca;text-decoration:none;font-size:14px}
+    .btn{background:#eaf2ff;border:1px solid #cfe0ff;padding:10px 12px;border-radius:10px}
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="card">
+
+    <!-- هدر -->
+    <div class="header">
+      <h1 class="title">ترخیص خودرو و موتورسیکلت توقیفی</h1>
+      <div class="subtitle">
+        این راهنما مربوط به ترخیص وسیله نقلیه از پارکینگ و مراجع توقیف است.
+      </div>
+
+      <div class="meta">
+        <div class="pill">📍 محل انجام: دفتر پلیس +۱۰</div>
+        <div class="pill">📷 عکس: بیومتریک در دفتر</div>
+        <div class="pill">💳 هزینه: مطابق اعلام پارکینگ و مرجع توقیف</div>
+      </div>
+    </div>
+
+    <!-- محتوا -->
+    <div class="content">
+
+      <h2>📄 مدارک مورد نیاز</h2>
+      <ul>
+        <li>اصل قبض توقیف (برگه پارکینگ)</li>
+        <li>تمام موارد درج‌شده در پشت برگه پارکینگ (۵ مورد)</li>
+        <li>در صورت نیاز: خلافی و بیمه شخص ثالث (قابل تهیه در دفتر)</li>
+      </ul>
+
+      <h2>🧭 مراحل انجام کار</h2>
+      <ul class="steps">
+        <li>مراجعه به دفتر پلیس +۱۰ و تحویل مدارک کامل</li>
+        <li>بررسی ثبت «تیک ترخیص» در سامانه</li>
+        <li>پس از ثبت تیک ترخیص، ثبت مدارک و عکس بیومتریک در دفتر</li>
+        <li>ارسال پیامک نتیجه برای متقاضی</li>
+      </ul>
+
+      <h2>⚠️ نکات مهم</h2>
+      <ul>
+        <li>بدون ارائه اصل برگه پارکینگ، انجام ترخیص امکان‌پذیر نیست</li>
+        <li>کپی ساده، تصویر یا برگه بدون مهر معتبر قابل قبول نیست</li>
+        <li>نام راننده باید در برگه پارکینگ درج شده باشد</li>
+        <li>در صورت ثبت نبودن «تیک ترخیص»، متقاضی باید به مرجع توقیف‌کننده مراجعه کند</li>
+        <li>در صورت مراجعه وکیل، ارائه اصل وکالت‌نامه الزامی است</li>
+      </ul>
+
+      <h2>🚫 موارد خاص (توقیف به دلیل شرب خمر)</h2>
+      <ul>
+        <li>رسید ضبط گواهینامه صادرشده توسط راهور</li>
+        <li>نامه دادگاه (شعبه ۳۸)</li>
+        <li>گواهینامه شخصی غیر از راننده توقیف‌شده</li>
+      </ul>
+
+      <div class="notice">
+        <strong>📨 نتیجه نهایی:</strong>
+        <div>• ارسال پیامک جهت مراجعه به پارکینگ و پرداخت مبلغ اعلام‌شده</div>
+        <div>• ارسال پیامک جهت مراجعه به ستاد ترخیص با کلیه مدارک</div>
+      </div>
+
+      <div class="footer">
+        <a class="btn" href="index.html">⬅ بازگشت به صفحه اصلی</a>
+        <span style="font-size:12px;color:#777">
+          راهنمای خدمات پلیس +۱۰ افسریه
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
