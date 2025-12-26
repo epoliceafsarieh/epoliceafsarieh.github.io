@@ -14,33 +14,41 @@
     body{font-family:Tahoma,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9}
     .wrap{max-width:920px;margin:18px auto 28px;padding:0 14px}
    /* --- Tags (labels) --- */
+/* Tags */
 .tags{
-  margin-top:6px;
   display:flex;
-  gap:6px;
   flex-wrap:wrap;
+  gap:6px;
+  margin-top:8px;
 }
 
 .tag{
   display:inline-flex;
   align-items:center;
-  gap:4px;
-  padding:3px 8px;
+  height:22px;              /* باریک‌تر */
+  padding:0 10px;           /* باریک‌تر */
   border-radius:999px;
-  font-size:11px;
-  line-height:1.6;
-  background:var(--soft);
-  border:1px solid var(--border);
-  color:var(--muted);
+  font-size:12px;
+  line-height:1;
+  color:#2c3e50;
+  background:#f3f6fb;
+  border:1px solid #e2e8f3;
   white-space:nowrap;
 }
 
-/* چندخدمتی / زیرشاخه‌دار */
-.tag--multi{
-  color:var(--accent);
-  background:#eef3ff;
-  border-color:#d7e2ff;
+.tag-multi{
+  background:#eef6ff;
+  border-color:#cfe3ff;
+  color:#0b3b7a;
+  font-weight:600;
 }
+
+/* وقتی کارت hover می‌شود، برچسب کمی شفاف‌تر/لوکس‌تر دیده شود */
+.item:hover .tag{
+  background:#eef3fb;
+  border-color:#d9e3f2;
+}
+
 
 /* مهم / پرتکرار (فعلاً استفاده نکن، بعداً به کار می‌آید) */
 .tag--hot{
