@@ -13,6 +13,42 @@
     }
     body{font-family:Tahoma,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.9}
     .wrap{max-width:920px;margin:18px auto 28px;padding:0 14px}
+   /* --- Tags (labels) --- */
+.tags{
+  margin-top:6px;
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:3px 8px;
+  border-radius:999px;
+  font-size:11px;
+  line-height:1.6;
+  background:var(--soft);
+  border:1px solid var(--border);
+  color:var(--muted);
+  white-space:nowrap;
+}
+
+/* چندخدمتی / زیرشاخه‌دار */
+.tag--multi{
+  color:var(--accent);
+  background:#eef3ff;
+  border-color:#d7e2ff;
+}
+
+/* مهم / پرتکرار (فعلاً استفاده نکن، بعداً به کار می‌آید) */
+.tag--hot{
+  color:#7a3b0b;
+  background:#fff3df;
+  border-color:#ffd9a2;
+}
+
     .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
     .header{padding:18px 16px;background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%);border-bottom:1px solid var(--border)}
     .title{margin:0;font-size:20px;color:var(--accent)}
