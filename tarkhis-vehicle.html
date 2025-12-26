@@ -28,6 +28,15 @@
 
     .steps li{margin-bottom:6px}
 
+    /* --- هزینه مثل گذرنامه --- */
+    details{margin:0}
+    summary{cursor:pointer;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    .fee-box{margin-top:8px;border:1px solid var(--border);border-radius:10px;padding:10px;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{border:1px solid var(--border);padding:8px;text-align:center}
+    th{background:#f2f5f9}
+
     .notice{
       margin-top:16px;background:var(--warn);
       border:1px solid var(--warn-border);
@@ -58,7 +67,19 @@
       <div class="meta">
         <div class="pill">📍 محل انجام: دفتر پلیس +۱۰</div>
         <div class="pill">📷 عکس: بیومتریک در دفتر</div>
-        <div class="pill">💳 هزینه: مطابق اعلام پارکینگ و مرجع توقیف</div>
+
+        <!-- هزینه با جدول بازشونده (مثل گذرنامه) -->
+        <details class="pill">
+          <summary>💳 هزینه: مطابق اعلام پارکینگ و مرجع توقیف (مشاهده جزئیات)</summary>
+          <div class="fee-box">
+            <table>
+              <tr><th>عنوان</th><th>توضیح</th></tr>
+              <tr><td>هزینه پارکینگ/مرجع توقیف</td><td id="fee-tarkhis-parking">...</td></tr>
+              <tr><td>هزینه خدمات دفتر</td><td id="fee-tarkhis-office">...</td></tr>
+              <tr><td>موارد احتمالی</td><td id="fee-tarkhis-optional">...</td></tr>
+            </table>
+          </div>
+        </details>
       </div>
     </div>
 
@@ -112,5 +133,23 @@
     </div>
   </div>
 </div>
+
+<!-- خواندن هزینه‌ها از فایل مرکزی -->
+<script src="fees.js"></script>
+<script>
+  // اگر fees.js لود نشود یا کلیدها وجود نداشته باشد، صفحه نمی‌ریزد
+  const safe = (v) => (v && String(v).trim().length ? v : "—");
+
+  if (typeof FEES !== "undefined" && FEES.tarkhis) {
+    document.getElementById("fee-tarkhis-parking").textContent  = safe(FEES.tarkhis.parking);
+    document.getElementById("fee-tarkhis-office").textContent   = safe(FEES.tarkhis.office);
+    document.getElementById("fee-tarkhis-optional").textContent = safe(FEES.tarkhis.optional);
+  } else {
+    document.getElementById("fee-tarkhis-parking").textContent  = "—";
+    document.getElementById("fee-tarkhis-office").textContent   = "—";
+    document.getElementById("fee-tarkhis-optional").textContent = "—";
+  }
+</script>
+
 </body>
 </html>
