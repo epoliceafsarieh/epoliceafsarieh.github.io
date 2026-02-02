@@ -1,0 +1,350 @@
+<!-- nezam-hub.html -->
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>نظام وظیفه</title>
+
+  <style>
+    @font-face{
+      font-family:"Vazirmatn";
+      src:url("assets/fonts/vazirmatn/Vazirmatn-Regular.woff2") format("woff2");
+      font-weight:400;font-style:normal;font-display:swap;
+    }
+    @font-face{
+      font-family:"Vazirmatn";
+      src:url("assets/fonts/vazirmatn/Vazirmatn-Medium.woff2") format("woff2");
+      font-weight:500;font-style:normal;font-display:swap;
+    }
+    @font-face{
+      font-family:"Vazirmatn";
+      src:url("assets/fonts/vazirmatn/Vazirmatn-Bold.woff2") format("woff2");
+      font-weight:700;font-style:normal;font-display:swap;
+    }
+
+    :root{
+      --brand-blue:#041E42;
+      --bg:#f5f7fb;
+      --card:#fff;
+      --text:#0f172a;
+      --muted:#475569;
+      --border:#e6e8ee;
+      --shadow:0 10px 30px rgba(2,8,23,.06);
+      --radius:16px;
+
+      /* خط جداکننده طلایی/برنزی */
+      --gold:#b08a2e;
+      --gold-soft:rgba(176,138,46,.35);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Vazirmatn", Tahoma, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.9;
+    }
+
+    .wrap{max-width:860px;margin:18px auto 90px;padding:0 14px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    /* نوار بالا مثل صفحات سرویس */
+    .brandbar{
+      background:var(--brand-blue);
+      color:#fff;
+      padding:6px 12px;
+      height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .back-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 10px;
+      border-radius:12px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .brand-right{
+      display:flex;align-items:center;gap:10px;min-width:0;
+    }
+    .svc-title{
+      font-weight:900;font-size:18px;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      max-width:60vw;
+    }
+    .svc-badge{
+      width:44px;height:44px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      border:2px solid rgba(255,255,255,.35);
+      background:transparent;
+      flex:0 0 auto;
+    }
+    .svc-icon{width:34px;height:34px;object-fit:contain;display:block}
+
+    .head{
+      padding:14px 16px;
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:600;
+      text-align:center;
+    }
+
+    /* آکاردئون هاب */
+    .hub{
+      padding:8px 0 2px;
+      background:#fff;
+    }
+
+    .hub-item{
+      border-top:1px solid var(--gold-soft);
+    }
+    .hub-item:first-child{
+      border-top:none;
+    }
+
+    /* خط طلایی وسط هر آیتم (حس همان screenshot) */
+    .hub-item::before{
+      content:"";
+      display:block;
+      height:1px;
+      background:linear-gradient(to left, transparent, var(--gold), transparent);
+      opacity:.9;
+    }
+
+    .hub-btn{
+      width:100%;
+      background:transparent;
+      border:0;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      cursor:pointer;
+      color:var(--brand-blue);
+      font-weight:900;
+      font-size:15px;
+      text-align:right;
+    }
+
+    .chev{
+      width:22px;height:22px;flex:0 0 auto;
+      transition:transform .18s ease;
+      opacity:.9;
+    }
+    .hub-item[data-open="true"] .chev{
+      transform:rotate(180deg);
+    }
+
+    .hub-panel{
+      padding:0 16px 16px;
+      display:none;
+    }
+    .hub-item[data-open="true"] .hub-panel{
+      display:block;
+    }
+
+    .grid{
+      margin-top:8px;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+    @media (min-width:720px){
+      .grid{grid-template-columns:repeat(3, minmax(0,1fr));}
+    }
+
+    /* کارت‌های سرمه‌ای لینک‌دار */
+    .tile{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      padding:12px 12px;
+      border-radius:14px;
+      background:var(--brand-blue);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      font-size:13px;
+      border:1px solid rgba(255,255,255,.08);
+      min-height:48px;
+    }
+    .tile:active{transform:scale(.99)}
+    .tile .arrow{
+      opacity:.9;
+      font-weight:900;
+      font-size:16px;
+      line-height:1;
+    }
+
+    /* کوچک و اداری */
+    .note{
+      padding:12px 16px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+      border-top:1px solid var(--border);
+      background:#fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <div class="brandbar">
+        <button class="back-btn" onclick="history.back()">بازگشت</button>
+
+        <div class="brand-right">
+          <div class="svc-title">نظام وظیفه</div>
+          <div class="svc-badge" aria-hidden="true">
+            <!-- آیکن/شکل سمت راست -->
+            <img class="svc-icon" src="assets/img/icons/nezam.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="head">
+        <p class="subtitle">راهنمای دسته‌بندی خدمات نظام‌وظیفه (هاب)</p>
+      </div>
+
+      <div class="hub" id="hub">
+
+        <!-- 1) اعزام -->
+        <div class="hub-item" data-open="false">
+          <button class="hub-btn" type="button">
+            <span>اعزام</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="hub-panel">
+            <div class="grid">
+              <a class="tile" href="nezam-ezam.html"><span>اعزام به خدمت</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>تمدید و تعجیل</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>غیبت و تنبیهات</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>توجیه غیبت</span><span class="arrow">›</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) معافیت -->
+        <div class="hub-item" data-open="false">
+          <button class="hub-btn" type="button">
+            <span>معافیت</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="hub-panel">
+            <div class="grid">
+              <a class="tile" href="#"><span>معافیت پزشکی</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>معافیت کفالت</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>معافیت بهزیستی</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>معافیت ایثارگری</span><span class="arrow">›</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) تحصیلی -->
+        <div class="hub-item" data-open="false">
+          <button class="hub-btn" type="button">
+            <span>تحصیلی</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="hub-panel">
+            <div class="grid">
+              <a class="tile" href="#"><span>معافیت تحصیلی دانش‌آموزی</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>معافیت تحصیلی دانشجویی</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>سنوات تحصیلی</span><span class="arrow">›</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4) کارت‌ها -->
+        <div class="hub-item" data-open="false">
+          <button class="hub-btn" type="button">
+            <span>کارت‌ها</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="hub-panel">
+            <div class="grid">
+              <a class="tile" href="#"><span>المثنی کارت پایان خدمت</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>المثنی کارت معافیت</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>استعلام و اصالت کارت</span><span class="arrow">›</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5) مجوزها -->
+        <div class="hub-item" data-open="false">
+          <button class="hub-btn" type="button">
+            <span>مجوزها</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="hub-panel">
+            <div class="grid">
+              <a class="tile" href="#"><span>مجوز خروج از کشور</span><span class="arrow">›</span></a>
+              <a class="tile" href="#"><span>مجوز ورزشی</span><span class="arrow">›</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="note">این صفحه یک هاب ناوبری است و به مرور تکمیل می‌شود.</div>
+    </div>
+  </div>
+
+  <script>
+    // آکاردئون: فقط UX ساده و قابل پیش‌بینی
+    (function(){
+      const hub = document.getElementById('hub');
+      if(!hub) return;
+
+      hub.querySelectorAll('.hub-item .hub-btn').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const item = btn.closest('.hub-item');
+          const isOpen = item.getAttribute('data-open') === 'true';
+          item.setAttribute('data-open', isOpen ? 'false' : 'true');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
